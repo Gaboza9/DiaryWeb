@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function KjwSidePicture(props) {
-    const [numPicture, setNumPicture] = useState(0);
+    const [numPicture, setNumPicture] = useState(3);
     const changeListener = (value) => {
         if(value === "add"){
             if(numPicture < 3)
