@@ -1,0 +1,106 @@
+.weekly-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.weekly-calander-item {
+  flex: 1 1 25%;
+
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  margin: -0.5px;
+  position: relative;
+}
+
+.weekly-calander-header {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 5px 0;
+  font-weight: 600;
+}
+
+.weekly-calander-body {
+  height: 300px;
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px 0;
+}
+
+.weekly-calander-popup-button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: normal;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  border-radius: 50%;
+  border: none;
+}
+
+.weekly-create-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.weekly-create-popup-content {
+  background-color: #fff;
+  padding: 20px;
+  font-size: 24px;
+  width: 450px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 8px;
+}
+
+.weekly-create-popup-content input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 4px;
+  outline: none;
+}
+.weekly-create-popup-content > div {
+  display: flex;
+  justify-content: center;
+  gap: 0 28px;
+}
+.weekly-create-popup-content button {
+  font-size: 15px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: none;
+  border-radius: 4px;
+}
+
+.weekly-calander-body button {
+  border: none;
+  border-radius: none;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+.weekly-calander-body > div {
+  display: flex;
+  gap: 0 4px;
+  text-align: left;
+  align-items: center;
+}
+.weekly-calander-body > div > div {
+  flex: 1;
+}
