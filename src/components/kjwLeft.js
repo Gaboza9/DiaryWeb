@@ -6,9 +6,11 @@ function KjwLeft(props){
     }
 
     return(
-        <div className="kjw_arrow" onClick={move}>
-            <img src={left} alt="left"/>
-        </div>
+        <>
+            <div className="kjw_arrow" onClick={move}>
+                <img src={left} alt="left"/>
+            </div>
+        </>
     );
 }
 
