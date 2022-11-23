@@ -9,6 +9,16 @@ import { store } from "./store/store";
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
+/**
+ * dayjs 설정
+ */
+ import dayjs from 'dayjs';
+ import isLeapYear from 'dayjs/plugin/isLeapYear'; // 윤년 판단 플러그인
+ import 'dayjs/locale/ko'; // 한국어 가져오기
+ 
+ dayjs.extend(isLeapYear); // 플러그인 등록
+ dayjs.locale('ko'); // 언어 등록
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

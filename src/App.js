@@ -1,19 +1,23 @@
 import './App.css';
 import Sidebar from './components/Sidebar';
-import Title from './components/Title';
 import MyCalendar from './components/MyCalendar';
 
+import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Title from './components/Title';
+import Daily from './components/daily';
 
 function App() {
   return (
-    <>
-    <Title/>
-    <div style={{display:'flex', flexDirection:'row', height:'100%'}}>
-    <Sidebar/>
-       <MyCalendar/>
+    <div className='App'>
+      <Title/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/daily" element={<Daily />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-    </>
-  );
+  )
 }
 
 export default App;
