@@ -12,7 +12,7 @@ function Sidebar() {
     const menuItems = [
         {
             icon : "bi bi-emoji-smile fs-2" ,
-            title: '_기분'
+            title: '기 분'
         },
         {
             icon : "bi-image fs-2" ,
@@ -29,7 +29,7 @@ function Sidebar() {
     ];
 
     const setSideMenu = ()=> {
-        if(content === '_기분')
+        if(content === '기 분')
             return (
                 <div style={{borderRight:'1px solid grey', width:'21%'}} >
                 <EmotionMenu/>

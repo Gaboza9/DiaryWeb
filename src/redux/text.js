@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const textSlice = createSlice({
 name: "text",
-initialState: { value: "기본값", },
+initialState: { value: localStorage.getItem("text"), },
 reducers: {
-setText: state => state.value = state,
+   // setText: () => state.value = state,
 },
 });
 export const { setText } = textSlice.actions;

@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import moment from 'moment'
-import {useDrop} from 'react-dnd'
 import './MyCalendar.css';
-import Picture from './Menu/Picture';
 import AddImage from './Menu/AddImage';
 import AddIcon from './Menu/AddIcon';
 import AddText from './Menu/AddText'
@@ -33,14 +31,15 @@ function MyCalendar(props) {
                             if(moment().format('YYYYMMDD') === days.format('YYYYMMDD')){
                                 return (
                                     <td key={days.format('YYYYMMDD')}>
-                                        <AddImage days={days}/>
-                                        <AddText/>
+                                        <AddIcon days={days}/>
+                                        <AddText day ={days.format('YYYY-MM-DD')}/>
                                     </td>
                                 );
                             }else{
                                 return(
                                     <td key={days.format('YYYYMMDD')} >                                  
-                                         <AddImage days={days}/>
+                                         <AddIcon days={days}/>
+                                         <AddText day ={days.format('YYYY-MM-DD')}/>
                                     </td>
                                 )
                             }

@@ -27,8 +27,8 @@ function AddIcon({days }) {
     }));
   
     const addImageToBoard = (id) => {
-      const EmotionList = EmotionList.filter((picture) => id === picture.id);
-      setBoard([EmotionList[0]]);
+      const emotionList = EmotionList.filter((picture) => id === picture.id);
+      setBoard([emotionList[0]]);
     };
 
     
@@ -36,6 +36,7 @@ function AddIcon({days }) {
     <div className="Board" ref={drop}>
     <span class="px-1 py-1">
         {days.format('D') }</span>
+        {console.log(board)}
         {board.map((emotion)=> {
             return  <MyIcon url={emotion.url} id={emotion.id}/>;
         })}

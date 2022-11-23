@@ -4,10 +4,13 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import AddText from './AddText';
-import MyCalendar from '../MyCalendar';
+import { useSelector, useDispatch } from "react-redux";
+import text from '../../redux/text';
 
 function TextDialog() {
+
+  const dispatch = useDispatch();
+  
    //input에서 value를 담기 위한 state 생성
    const [textInfo, setTextInfo] = React.useState({
     text: "",
@@ -30,8 +33,8 @@ function TextDialog() {
   
     const handleClose = () => {
       setOpen(false);
-      localStorage.setItem('key', textInfo);
-      localStorage.getItem('key');
+      localStorage.setItem(textInfo.date,textInfo.text);
+      window.location.reload();
     };
 
   return (
