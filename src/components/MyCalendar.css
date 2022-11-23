@@ -5,13 +5,12 @@ html, body {
   
   
    .Calendar {
-    height:85%;
+    height:100%;
     width:90%;
     font-size: 1.5vh;
     display: flex;      /* display 설정해줘야 아래 flex로 해주면 direction 선택가능*/
     flex-direction: column;   /* 이건 세로순으로  태그들을 표시함 css*/
     align-items: left;      /*이건 가로 왼쪽 css*/
-    justify-content: center;  /* 이건 세로 중앙 css*/
   
   }
   
@@ -22,7 +21,7 @@ html, body {
   .Calendar table{
     /* display:flex; */
     width:95%;
-    height:100vh;
+    height:100%;
     margin-left: 30px;
   }
   .Calendar table tbody{
@@ -37,6 +36,7 @@ html, body {
     text-align: center;
   }
   .Calendar td{
+      vertical-align : top;
       /* display:flex; */
       justify-content: flex-start;
       border-right:0.5px solid rgb(198, 198, 198);
@@ -46,6 +46,7 @@ html, body {
   }
   .Calendar td span{
       border-radius: 90px;
+      padding:10px;
   }
   #today{
     background-color: rgb(211, 74, 109);

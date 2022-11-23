@@ -37,6 +37,7 @@ function AddImage({days}) {
   
     const addImageToBoard = (id) => {
       const pictureList = PictureList.filter((picture) => id === picture.id);
+      localStorage.setItem(days.days,pictureList[0].url);
       setBoard([pictureList[0]]);
     };
 

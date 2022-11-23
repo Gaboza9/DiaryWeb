@@ -3,7 +3,7 @@ import {useDrag} from "react-dnd"
 
 function MyIcon({id,url}) {
     const [{isDragging}, drag] = useDrag(()=>({
-        type: "icon",
+        type: "item",
         item: {id: id},
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging(),
