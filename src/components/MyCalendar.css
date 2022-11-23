@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+   .Calendar {
+    height:85%;
+    width:90%;
+    font-size: 1.5vh;
+    display: flex;      /* display 설정해줘야 아래 flex로 해주면 direction 선택가능*/
+    flex-direction: column;   /* 이건 세로순으로  태그들을 표시함 css*/
+    align-items: left;      /*이건 가로 왼쪽 css*/
+    justify-content: center;  /* 이건 세로 중앙 css*/
+  
+  }
+  
+  .Calendar .control{
+    display: flex;
+    flex-direction: row;
+  }
+  .Calendar table{
+    /* display:flex; */
+    width:95%;
+    height:100vh;
+    margin-left: 30px;
+  }
+  .Calendar table tbody{
+    /* display:flex; */
+    flex-direction: column;
+  }
+  .Calendar tr{
+      border-top: 1px solid rgb(0, 0, 0);
+      border-bottom: 1px solid rgb(0, 0, 0);
+  }
+  .Calendar th{
+    text-align: center;
+  }
+  .Calendar td{
+      /* display:flex; */
+      justify-content: flex-start;
+      border-right:0.5px solid rgb(198, 198, 198);
+      border-left:0.5px solid rgb(198, 198, 198);
+      width:12vw;
+      height:13vh;
+  }
+  .Calendar td span{
+      border-radius: 90px;
+  }
+  #today{
+    background-color: rgb(211, 74, 109);
+    color: aliceblue;
+  }
