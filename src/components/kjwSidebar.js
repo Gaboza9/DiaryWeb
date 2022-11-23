@@ -11,18 +11,18 @@ function KjwSidebar(props) {
 
     return (
         <>
-        <Button variant="success" onClick={handleShow}>
-            Edit
-        </Button>
+            <Button variant="success" onClick={handleShow} style={{height:'10%'}}>
+                Edit
+            </Button>
 
-        <Offcanvas show={show} onHide={handleClose}>
-            <Offcanvas.Header closeButton>
-            <Offcanvas.Title>일기장 레이아웃 편집하기</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-                <KjwSide funcPicture={props.funcPicture}/>
-            </Offcanvas.Body>
-        </Offcanvas>
+            <Offcanvas show={show} onHide={handleClose} style={{height:'100%'}}>
+                <Offcanvas.Header closeButton>
+                <Offcanvas.Title>일기장 레이아웃 편집하기</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    <KjwSide funcPicture={props.funcPicture}/>
+                </Offcanvas.Body>
+            </Offcanvas>
         </>
     );
 }

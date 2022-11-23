@@ -1,10 +1,10 @@
-import KjwLeft from './kjwLeft';
-import KjwRight from './kjwRight';
-import KjwDate from './kjwDate';
-import KjwWeatherList from './kjwWeatherList';
-import KjwPictureArray from './kjwPictureArray';
-import KjwMood from './kjwMood';
-import KjwSidebar from './kjwSidebar';
+import KjwLeft from '../components/kjwLeft';
+import KjwRight from '../components/kjwRight';
+import KjwDate from '../components/kjwDate';
+import KjwWeatherList from '../components/kjwWeatherList';
+import KjwPictureArray from '../components/kjwPictureArray';
+import KjwMood from '../components/kjwMood';
+import KjwSidebar from '../components/kjwSidebar';
 import { useState } from 'react';
 
 function Daily(){
