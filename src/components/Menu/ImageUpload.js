@@ -44,18 +44,6 @@ function ImageUpload() {
                     accept="image/*"
                     onChange={saveFileImage}
                   />
-
-                  <button
-                    class="btn btn-outline-dark"
-                    style={{
-                      width: "60px",
-                      height: "40px",
-                      cursor: "pointer",
-                    }}
-                    onClick={() => deleteFileImage()}
-                  >
-                    삭제
-                  </button>
                 </div>
               </div>
             </td>

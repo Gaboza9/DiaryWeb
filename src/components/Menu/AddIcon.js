@@ -2,10 +2,9 @@ import React, {useState} from 'react'
 import {useDrop} from 'react-dnd'
 import MyIcon from './MyIcon'
 import AddText from './AddText'
-import { textAlign } from '@mui/system';
 
-function AddIcon({days, today }) {
-       
+function AddIcon(key) {  
+
     const EmotionList = [ { id:1, url:"bi bi-emoji-angry fs-1"},
                         { id:2, url:"bi bi-emoji-dizzy fs-1"},
                         { id:3, url:"bi bi-emoji-expressionless fs-1"},
@@ -30,36 +29,40 @@ function AddIcon({days, today }) {
   
     const addImageToBoard = (id) => {
       const emotionList = EmotionList.filter((picture) => id === picture.id);
-      const key = days.format('YYYYMMDD')+"Emotion";
-      localStorage.setItem(key,emotionList[0].url);
+      localStorage.setItem(key+"IconId", emotionList[0].id);
+      localStorage.setItem(key+"Icon", emotionList[0].url);
       setBoard([emotionList[0]]);
     };
 
-    const IsToday =()=>{
-      if(today){
-        return(
-          <span class="px-1 py-1 align-top" style={{backgroundColor: 'rgb(211, 74, 109)', color:'aliceblue'}}>
-            {days.format('D')}</span>
-        )
-      }else{
-        return(
-          <span class="px-1 py-1 align-top" >
-            {days.format('D') }</span>
-        )
-    }
-  }
+    // const IsToday =()=>{
+    //   if(today){
+    //     return(
+    //       <span class="px-1 py-1 align-top" style={{backgroundColor: 'rgb(211, 74, 109)', color:'aliceblue'}}>
+    //         {days.format('D')}</span>
+    //     )
+    //   }else{
+    //     return(
+    //       <span class="px-1 py-1 align-top" >
+    //         {days.format('D') }</span>
+    //     )
+    // }
+  
+
   return (
-    <td key={days.format('YYYYMMDD')} className="Board" ref={drop}>
-      <div class="my-2 mx-2">
-      {IsToday()}
-      </div>
-      <div class="text-center">
-       <MyIcon url={localStorage.getItem(days.format('YYYYMMDD')+"Emotion")}/>
-      </div>
-      <div class="text-center">
-        <AddText day ={days.format('YYYY-MM-DD')}/>
-      </div>
-    </td>
+    // <td key={days.format('YYYYMMDD')} className="Board" ref={drop}>
+    //   <div class="my-2 mx-2">
+    //   {IsToday()}
+    //   </div>
+    //   <div class="text-center">
+    //   {board.map((emotion)=> {
+    //         return  <MyIcon url={emotion.url} id={emotion.id}/>;
+    //     })}
+    //   </div>
+    //   <div class="text-center">
+    //     <AddText day ={days.format('YYYY-MM-DD')}/>
+    //   </div>
+    // </td>
+    <div>icon</div>
   )
 }
 

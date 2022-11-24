@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import Picture from './Picture';
 import {useDrop} from 'react-dnd'
+import AddText from './AddText';
+import LocalImage from './LocalImage'
+import AddIcon from './AddIcon';
        
 const PictureList = [ { id:1, url:"오둥이1"},
 { id:2, url:"오둥이2"},
@@ -24,8 +27,9 @@ const EmotionList = [ { id:1, url:"bi bi-emoji-angry fs-1"},
 { id:10, url:"bi bi-emoji-sunglasses fs-1"},
 { id:11, url:"bi bi-emoji-wink fs-1"}];
 
-function AddImage({days}) {
+function AddImage({days, today}) {
     const [board, setBoard] = useState([]);
+    const key = days.format('YYYYMMDD');
 
     const [{isOver},drop] = useDrop(()=>({
       accept: "image",
@@ -37,18 +41,38 @@ function AddImage({days}) {
   
     const addImageToBoard = (id) => {
       const pictureList = PictureList.filter((picture) => id === picture.id);
-      localStorage.setItem(days.days,pictureList[0].url);
       setBoard([pictureList[0]]);
+      localStorage.setItem(key+"Url", pictureList[0].url);
+      localStorage.setItem(key+"Id", pictureList[0].id);
     };
+
+
+    const IsToday =()=>{
+      if(today){
+        return(
+          <span class="px-1 py-1 align-top" style={{backgroundColor: 'rgb(211, 74, 109)', color:'aliceblue'}}>
+            {days.format('D')}</span>
+        )
+      }else{
+        return(
+          <span class="px-1 py-1 align-top" >
+            {days.format('D') }</span>
+        )
+    }
+  }
 
     
   return (
-    <div className="Board" ref={drop}>
-       <span class="px-1 py-1"> {days.format('D') }</span>
-        {board.map((picture) => {
-        return <Picture url={require(`../../img/${picture.url}.png`)} id={picture.id} />;
-        })}
+    <td key={days.format('YYYYMMDD')} className="Board" ref={drop}>
+    <div class="my-2 mx-2">
+    {IsToday()}
     </div>
+    {/* <AddIcon days={key}/> */}
+    <LocalImage days={key}/>
+    <div class="text-center">
+      <AddText day ={days.format('YYYY-MM-DD')}/>
+    </div>
+  </td>
   )
 }
 

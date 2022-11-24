@@ -30,11 +30,11 @@ function MyCalendar(props) {
                             //오늘 날짜
                             if(moment().format('YYYYMMDD') === days.format('YYYYMMDD')){
                                 return (
-                                    <AddIcon days={days} today={true}/>
+                                    <AddImage days={days} today={true}/>
                                 );
                             }else{
                                 return(
-                                    <AddIcon days={days} today={false}/>
+                                    <AddImage days={days} today={false}/>
                                 )
                             }
                         })
