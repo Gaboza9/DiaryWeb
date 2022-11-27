@@ -7,10 +7,13 @@
 import dayjs from "dayjs";
 
 const DateFormat = () => {
+    const spanStyle = {
+        fontSize:"26px"
+    }
     return (
-        <>
+        <span style={spanStyle}>
             {dayjs(new Date()).format('YYYY-MM-DD')}
-        </>
+        </span>
     );
 }
 
