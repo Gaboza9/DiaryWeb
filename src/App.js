@@ -16,7 +16,6 @@ function App() {
           <Route path="/daily" element={<Daily />} />
           <Route path="/monthly" element={<Monthly/>}/>
           <Route path="/weekly" element={<WeeklyPage />} />
-
         </Routes>
       </BrowserRouter>
     </div>

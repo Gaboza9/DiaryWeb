@@ -34,18 +34,6 @@ function AddIcon(key) {
       setBoard([emotionList[0]]);
     };
 
-    // const IsToday =()=>{
-    //   if(today){
-    //     return(
-    //       <span class="px-1 py-1 align-top" style={{backgroundColor: 'rgb(211, 74, 109)', color:'aliceblue'}}>
-    //         {days.format('D')}</span>
-    //     )
-    //   }else{
-    //     return(
-    //       <span class="px-1 py-1 align-top" >
-    //         {days.format('D') }</span>
-    //     )
-    // }
   
 
   return (

@@ -53,6 +53,6 @@ function BoardAddItem({days}) {
     </div>
   )
 }
-}
+
 
 export default BoardAddItem

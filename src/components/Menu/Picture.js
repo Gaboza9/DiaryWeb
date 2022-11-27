@@ -11,7 +11,7 @@ function Picture({ id, url }) {
   }));
   return (
     <>
-    <div className="px-3 py-3" style={{display:'inline-block'}}>
+    <div className="px-2 py-2" style={{display:'inline-block'}}>
     <img src={url} ref={drag} width='70'/>
     </div>
     </>

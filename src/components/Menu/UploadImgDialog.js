@@ -4,7 +4,6 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-
 import ImageUpload from './ImageUpload'
 
 export default function FormDialog() {
@@ -21,25 +20,10 @@ export default function FormDialog() {
   const handleUpload = async () => {
     // 선택된 날짜 배경
     setOpen(false);
-//     const formData = new FormData();
-//     formData.append('file', img);
-//     // 서버의 upload API 호출
-//     const res = await axios.post("/api/upload", formData);
-//     console.log(res);
-
-//     // routes/img.js
-//     const upload2 = multer();
-
-//     //write api
-//     router.post('/write', upload2.none(), async(req, res, next) => {
-//       try{
-//           // DB 생성
-//       }catch(e){
-//           //오류 처리
-//       }
-// })
-    
+  
   };
+
+
 
   return (
     <div>
@@ -51,8 +35,9 @@ export default function FormDialog() {
           {/* <DialogContentText>
           </DialogContentText> */}
           <ImageUpload/>
+          <br></br>
           <form>
-            날짜 : <input type="date"></input>
+            날짜 : <input type="date" style={{display:'inline-block'}}></input>
           </form>
         </DialogContent>
         <DialogActions>
