@@ -12,12 +12,8 @@ function App() {
       <Title />
       <BrowserRouter>
         <Routes>
-<<<<<<< Updated upstream
-          <Route path="/daily" element={<Daily />} />
-=======
           <Route path="/daily" element={<RecoilRoot><Daily /></RecoilRoot>} />
           <Route path="/monthly" element={<Monthly/>}/>
->>>>>>> Stashed changes
           <Route path="/weekly" element={<WeeklyPage />} />
         </Routes>
       </BrowserRouter>

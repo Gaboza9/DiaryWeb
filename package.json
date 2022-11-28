@@ -11,11 +11,9 @@
     "dayjs": "^1.11.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
-<<<<<<< Updated upstream
-    "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
-=======
     "react-draggable": "^4.4.5",
     "react-moment": "^1.1.2",
     "react-redux": "^8.0.5",
@@ -25,7 +23,6 @@
     "recoil": "^0.7.6",
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.6",
->>>>>>> Stashed changes
     "web-vitals": "^2.1.4"
   },
   "scripts": {
