@@ -3,10 +3,12 @@ import React, { useState } from "react";
 function ImageUpload() {
   //파일 미리볼 url을 저장해줄 state
   const [fileImage, setFileImage] = useState("");
+  
 
   // 파일 저장
   const saveFileImage = (e) => {
     setFileImage(URL.createObjectURL(e.target.files[0]));
+    localStorage.setItem("fileImage", URL.createObjectURL(e.target.files[0]));
   };
 
   // 파일 삭제

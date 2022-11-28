@@ -45,7 +45,7 @@ function LocalIcon(key) {
 
     if(icon){
         return (
-            <div class="fs-6 mx-2 px-1 mt-1">
+            <div class="fs-6 mx-2 px-1 mt-1" style={{display:'inline-block'}}>
             <i className={icon} style={{color:'Salmon'}} ref={drag} onContextMenu={confirmDelete}></i>
             </div>
         )

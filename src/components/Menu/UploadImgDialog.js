@@ -9,18 +9,34 @@ import ImageUpload from './ImageUpload'
 export default function FormDialog() {
   const [open, setOpen] = React.useState(true);
 
+    //input에서 value를 담기 위한 state 생성
+    const [textInfo, setTextInfo] = React.useState({
+      text: "",
+      date: "",
+    });
+
+    //input에 입력될 때마다 account state값 변경되게 하는 함수
+    const onChangeTextInfo = (e) => {
+      setTextInfo({
+        ...textInfo,
+        [e.target.name]: e.target.value,
+      });
+    };
+
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
+    
   };
 
   const handleUpload = async () => {
     // 선택된 날짜 배경
     setOpen(false);
-  
+    localStorage.setItem(textInfo.date+"uploadImg",textInfo.text);
+    window.location.reload();
   };
 
 
@@ -37,7 +53,7 @@ export default function FormDialog() {
           <ImageUpload/>
           <br></br>
           <form>
-            날짜 : <input type="date" style={{display:'inline-block'}}></input>
+            날짜 : <input type="date" style={{display:'inline-block'}} onChange={onChangeTextInfo}></input>
           </form>
         </DialogContent>
         <DialogActions>

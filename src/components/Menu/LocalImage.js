@@ -1,5 +1,5 @@
 import React from 'react'
-import Picture from './Picture';
+import MyImage from './MyImage';
 
 function LocalImage(key) {
     const url = localStorage.getItem(key.days+"Url");
@@ -25,7 +25,6 @@ function LocalImage(key) {
       };
       const deleteConfirm= () => { localStorage.removeItem(key.days+"Url");
       localStorage.removeItem(key.days+"Id");
-      localStorage.removeItem(key.days+"Icon");
         window.location.reload();};
       const cancelConfirm = () => console.log("취소했습니다.");
       const confirmDelete = useConfirm(
@@ -37,7 +36,7 @@ function LocalImage(key) {
     if(url){
         return (
             <div class="text-center" onContextMenu={confirmDelete}>
-            <Picture url={require(`../../img/${url}.png`)} id={id} />
+            <MyImage url={require(`../../img/${url}.png`)} id={id} />
             </div>
         )
     }  

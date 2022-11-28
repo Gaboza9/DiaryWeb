@@ -31,6 +31,7 @@ const EmotionList = [ { id:1, url:"bi bi-emoji-angry fs-5"},
 function AddImage({days, today}) {
     const [board, setBoard] = useState([]);
     const key = days.format('YYYYMMDD');
+    const fileImg = localStorage.getItem("fileImg");
 
     const [{isOver},drop] = useDrop(()=>({
       accept: "image",
@@ -84,14 +85,21 @@ function AddImage({days, today}) {
     
   return (
 
-    <td key={days.format('YYYYMMDD')} className="Board" ref={drop2}>
-      <div ref={drop}>
+    <td key={days.format('YYYYMMDD')} className="Board" ref={drop}>
+      <div ref={drop2} style={{height: '90%'}}>
     <div class="mt-2 mx-2">
     {IsToday()}
     </div>
-    {/* <i class="bi bi-circle fs-6 mx-2 px-1 mt-1" style={{color:'grey'}}></i> */}
     <LocalIcon  days={key}/>
     <LocalImage days={key}/>
+    {/* {fileImg && (
+                  <img
+                    alt="sample"
+                    src={fileImg}
+                    style={{ margin: "auto"}}
+                    width='90'
+                  />
+                )} */}
     <div class="text-center">
       <AddText day ={days.format('YYYY-MM-DD')}/>
     </div></div>
