@@ -20,7 +20,7 @@
 }
 
 .weekly-calander-body {
-  height: 300px;
+  height: 280px;
   padding: 10px;
   overflow: auto;
   display: flex;

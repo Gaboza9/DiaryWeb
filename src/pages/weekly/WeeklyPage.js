@@ -125,7 +125,7 @@ const WeeklyPage = () => {
     saveData(newData);
   };
   return (
-    <div className="weekly-container mx-5 my-5">
+    <div className="weekly-container mx-5 my-5 pb-5">
       {weekData.map((item, idx) => {
         const id = getId(item);
         const dateFormat = getDate(item);

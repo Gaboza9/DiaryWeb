@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -14,8 +15,17 @@ function title() {
             <Nav.Link href="/monthly">Monthly</Nav.Link>
             <Nav.Link href="/weekly">Weekly</Nav.Link>
             <Nav.Link href="/daily">Daily</Nav.Link>
-            <Nav.Link href="/bookReview">BookReview</Nav.Link>
-            <Nav.Link href="/movieReview">MovieReview</Nav.Link>
+            <NavDropdown
+                    title="Review"
+                  >
+                    <NavDropdown.Item href="/bookReview">
+                      Book Review
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="/MovieReview">
+                      Movie Review
+                    </NavDropdown.Item>
+                  </NavDropdown>
           </Nav>
         </Container>
       </Navbar>
