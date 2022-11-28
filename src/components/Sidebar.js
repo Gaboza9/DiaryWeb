@@ -18,10 +18,7 @@ function Sidebar() {
             icon : "bi-image fs-2" ,
             title: '이미지'
         },
-        {
-            icon : "bi bi-cloud-arrow-up-fill fs-2" ,
-            title: '업로드'
-        },
+        
         {
             icon : "bi bi-fonts fs-2" ,
             title: '텍스트'
@@ -53,6 +50,7 @@ function Sidebar() {
             <TextDialog/>
             </div>
         )  
+        
     }
 
     const clickCloseIcon = () => {
@@ -65,8 +63,8 @@ function Sidebar() {
             return <i class="bi bi-chevron-double-right fs-3 mx-3 my-2 px-3 py-3 fixed-bottom" 
             ></i>
         else
-            return <i class="bi bi-chevron-double-left fs-3 mx-3 my-2 px-3 py-3 fixed-bottom"
-            onClick={clickCloseIcon}></i>
+           return <i class="bi bi-chevron-double-left fs-3 mx-3 my-2 px-3 py-3 fixed-bottom"
+           onClick={clickCloseIcon}></i>
     }
 
     const changeMenu =(title)=>{

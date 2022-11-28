@@ -6,8 +6,8 @@ function Monthly() {
     return (
         <>
         <div style={{display:'flex', flexDirection:'row', height:'100%'}}>
-          <Sidebar/>
-          <MyCalendar/>
+        <Sidebar/>
+        <MyCalendar/>
         </div>
         </>
       );

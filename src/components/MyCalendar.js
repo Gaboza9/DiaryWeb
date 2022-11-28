@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import moment from 'moment'
-import {useDrop} from 'react-dnd'
 import './MyCalendar.css';
-import Picture from './Menu/Picture';
 import AddImage from './Menu/AddImage';
 import AddIcon from './Menu/AddIcon';
 import AddText from './Menu/AddText'
@@ -32,16 +30,11 @@ function MyCalendar(props) {
                             //오늘 날짜
                             if(moment().format('YYYYMMDD') === days.format('YYYYMMDD')){
                                 return (
-                                    <td key={days.format('YYYYMMDD')}>
-                                        <AddImage days={days}/>
-                                        <AddText/>
-                                    </td>
+                                    <AddImage days={days} today={true}/>
                                 );
                             }else{
                                 return(
-                                    <td key={days.format('YYYYMMDD')} >                                  
-                                        <AddImage days={days}/>
-                                    </td>
+                                    <AddImage days={days} today={false}/>
                                 )
                             }
                         })
