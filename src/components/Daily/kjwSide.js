@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Toggle from './toggle';
 import AddImage from './../Menu/AddImage';
+import ImageUpload from '../Menu/ImageUpload';
 
 function KjwSide(props) {
     const wrapStyle= {
@@ -53,26 +54,27 @@ function KjwSide(props) {
     //<button onClick={setSide}>완료</button>
     // 
 
-    const [diaryImg, setDiaryImg] = useState([]);
+    
 
-    const addImage = e => {
-        const nowSelectImageList = e.target.files;
-        const nowImageURLList = [...diaryImg];
-        for(let i=0; nowSelectImageList.length; i++){
-            const nowImageUrl = URL.createObjectURL(nowSelectImageList)
-            nowImageURLList.push(nowImageUrl)
-        }
-        setDiaryImg(nowImageURLList)
-    }
+    // const addImage = e => {
+    //     const nowSelectImageList = e.target.files;
+    //     //const nowImageURLList = [...diaryImg];
+    //     setDiaryImg(URL.createObjectURL(e.target.files))
+    //     for(let i=0; nowSelectImageList.length; i++){
+    //         const nowImageUrl = localStorage.setItem("diaryImg",URL.createObjectURL(nowSelectImageList[i]));
+    //         nowImageURLList.push(nowImageUrl)
+    //     }
+    //     setDiaryImg(nowImageURLList)
+    // }
+    // // 파일 저장
+    // const saveFileImage = (e) => {
+    //     setFileImage(URL.createObjectURL(e.target.files[0]));
+    //     localStorage.setItem("fileImage", URL.createObjectURL(e.target.files[0]));
+    // };
 
-    return (
-        <div style={wrapStyle}>
-            <div style={divStyle}>
-                <div style={{flexGrow:'1'}}>날씨</div>
-                <Toggle listener={props.funcWeather}/>
-            </div>
-            
-            <div style={divStyle}>
+
+    /*
+    <div style={divStyle}>
                 <div style={{flexGrow:'1'}}>사진</div>
                 <div style={divPictureStyle}>
                     <button style={btnStyle} onClick={() => changeListener("add")}>+</button>
@@ -80,21 +82,19 @@ function KjwSide(props) {
                     <button style={btnStyle} onClick={() => changeListener("sub")}>-</button>
                 </div>
             </div>
-
-            <div>
-                <label
-                    htmlFor="input-file"
-                    className="sideInputImage"
-                    onChange={addImage}
-                >사진 올리기
-                    <input
-                        type="file"
-                        multiple="multiple"
-                        id="input-file"
-                        style={{display:'none'}}
-                        accept=".jpg, .jpeg, .png"
-                    />
-                </label>
+    */
+    return (
+        <div style={wrapStyle}>
+            <div style={divStyle}>
+                <div style={{flexGrow:'1'}}>날씨</div>
+                <Toggle listener={props.funcWeather}/>
+            </div>
+            
+            
+            
+            <div style={divStyle}>
+                <div style={{flexGrow:'1'}}>이미지</div>
+                <Toggle listener={props.funcImage}/>
             </div>
             
             <div style={divStyle}>

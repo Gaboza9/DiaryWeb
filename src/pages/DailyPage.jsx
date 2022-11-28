@@ -11,7 +11,7 @@ import dayjs from "dayjs";
 function DailyPage(){
     const bodyStyle = {
         display: "flex",
-        height: "100vh",
+        height: "110vh",
         flexDirection: "row",
         fontFamily: "'Gamja Flower', cursive"
     }
@@ -75,14 +75,22 @@ function DailyPage(){
         });
     }, []);
 
+    const [isImage, setIsImage] = useState(false)
+    const [imageSrc, setImageSrc] = useState()
+    const changeSetIsImage = (isImage) => {
+        setIsImage(isImage)
+        if(isImage === false)
+            setImageSrc()
+    }
+
     return (
         <div style={bodyStyle}>
-            <KjwSidebar setTargets={setTargets} box={box} funcWeather={changeWeather} funcPicture={changePicture} funcDeco={changeDeco} isDeco={isDeco}/>
+            <KjwSidebar setTargets={setTargets} box={box} funcWeather={changeWeather} funcPicture={changePicture} picture={numPicture} funcDeco={changeDeco} isDeco={isDeco} funcImage={changeSetIsImage} isImage={isImage} funcImageSrc={setImageSrc}/>
             <div style={{display:"flex", flexBasis:"100%", flexDirection:"row", justifyContent:"center"}}>
                 <div style={mainStyle} ref={stockContainer}>
                     <KjwDecoration targets={targets}/>
                     <KjwDate currentDate={currentDate} setLastDayListener={setLastDayListener} setNextDayListener={setNextDayListener}/>
-                    <KjwDiary weather={isWeather} picture={numPicture} isEdit={isDeco}/>
+                    <KjwDiary weather={isWeather} picture={numPicture} isEdit={isDeco} isImage={isImage} imageSrc={imageSrc}/>
                 </div>
             </div>
         </div>

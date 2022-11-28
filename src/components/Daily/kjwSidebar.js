@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import KjwSide from './kjwSide';
 import KjwDragDrop from './kjwDragDrop';
+import KjwImageBar from './kjwImageBar';
 
 function KjwSidebar(props) {
     const sidebarStyle = {
@@ -33,10 +34,17 @@ function KjwSidebar(props) {
                 </Offcanvas.Body>
             </Offcanvas>
     */
+    
+
     return (
         <div style={{borderRight:"1px solid grey"}}>
             <div style={sidebarStyle}>
-                <KjwSide funcPicture={props.funcPicture} funcWeather={props.funcWeather} funcDeco={props.funcDeco}/>
+                
+                <KjwSide funcPicture={props.funcPicture} funcWeather={props.funcWeather} funcDeco={props.funcDeco} funcImage={props.funcImage}/>
+                {props.isImage &&
+                    <KjwImageBar funcImageSrc={props.funcImageSrc} picture={props.picture}/>
+                }
+                
                 {props.isDeco && 
                     <KjwDragDrop setTargets = {props.setTargets} box={props.box}/>
                 }

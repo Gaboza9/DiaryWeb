@@ -39,7 +39,9 @@ function KjwDiary(props) {
         padding: "12px"
     }
     
-
+    /*{(props.picture!=0) &&  <div>
+                <KjwPictureArray num={props.picture}/>
+            </div>} */
     return(
         <div style={paperStyle}>
             <div style={{flexBasis:"900px"}}>
@@ -48,11 +50,10 @@ function KjwDiary(props) {
                     {(props.weather) && <KjwWeatherList/>}
                 </div>
                 <textarea disabled={props.isEdit} style={contentStyle} placeholder='내용을 적어주세요.'/>
-                <ControlledCarousel/>
+                {(props.isImage) &&
+                <ControlledCarousel imageSrc={props.imageSrc} num={props.picture}/>}
             </div>
-            {(props.picture!=0) &&  <div>
-                <KjwPictureArray num={props.picture}/>
-            </div>}
+            
         </div>
     );
 }
