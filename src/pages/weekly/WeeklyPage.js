@@ -28,6 +28,22 @@ const getId = (dateObj) => {
   return `${year}-${month}-${date}`;
 };
 
+function leftPad(value) {
+  if (value >= 10) {
+      return value;
+  }
+
+  return `0${value}`;
+}
+
+const getDate =(dateObj) =>{
+  const year = dateObj.getFullYear();
+  const month = leftPad(dateObj.getMonth()+1);
+  const day = leftPad(dateObj.getDate());
+
+  return [year, month, day].join(".");
+};
+
 const getData = () => {
   try {
     const data = window.localStorage.getItem("weekly_data");
@@ -112,10 +128,12 @@ const WeeklyPage = () => {
     <div className="weekly-container mx-5 my-5">
       {weekData.map((item, idx) => {
         const id = getId(item);
+        const dateFormat = getDate(item);
         const calanderData = data.find((e) => e.id === id);
         const props = {
           id: id,
           key: id,
+          dateFormat: dateFormat,
           onCreateTodo: createTodo,
           data: calanderData?.todos ?? [],
           date: item,

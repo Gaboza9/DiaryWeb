@@ -7,6 +7,7 @@ const headerMap = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const WeeklyCalanderItem = ({
   customHeader,
   date,
+  dateFormat,
   onCreateTodo,
   id,
   data,
@@ -14,6 +15,8 @@ const WeeklyCalanderItem = ({
   onDeleteTodo,
 }) => {
   const dayIdx = date.getDay();
+  const dayYear = date.getFullYear();
+  const dayMonth = date.getMonth();
   const [visiblePopup, setVisiblePopup] = useState(false);
 
   const togglePopup = () => {
@@ -40,14 +43,38 @@ const WeeklyCalanderItem = ({
   const deleteTodo = (todoText) => {
     onDeleteTodo(id, todoText);
   };
+  const isMemo =() =>{
+    if(customHeader??dateFormat === 'MEMO')
+      return (<br></br>)
+    else return (dateFormat)
+  }
+  const header =()=>{
+    const today = new Date();
+
+    //오늘
+    if(today.getDay() === dayIdx ){
+      return(
+        <div className="weekly-calander-header text-center" style={{color:'Salmon'}}>
+        {customHeader ?? headerMap[dayIdx]}<br></br>
+       {isMemo()}
+      </div>
+      )
+    }
+    else{
+    return(
+      <div className="weekly-calander-header text-center">
+      {customHeader ?? headerMap[dayIdx]}<br></br>
+     {isMemo()}
+    </div>
+    )}
+  }
   return (
     <div className="weekly-calander-item">
       {visiblePopup && (
         <CreatePopup onCreateTodo={createTodo} onClose={togglePopup} />
       )}
-      <div className="weekly-calander-header text-center">
-        {customHeader ?? headerMap[dayIdx]}
-      </div>
+      {header()}
+     
       <div className="weekly-calander-body">
         {data.map((item) => (
           <div>
