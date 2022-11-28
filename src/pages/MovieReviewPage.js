@@ -1,11 +1,9 @@
-import ReviewContents from '../components/RePage/ReviewContents';
-import { useState } from 'react';
+import ReviewContents from "../components/ReviewContents";
 
 function MovieReviewPage() {
-  const [tab , setDealTab]=useState("curr")
   return (
     <>
-      <ReviewContents/>
+      <ReviewContents type="배우"/>
     </>
   );
 }

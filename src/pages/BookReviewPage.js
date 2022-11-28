@@ -1,9 +1,9 @@
-import ReviewContents from '../components/RePage/ReviewContents';
+import ReviewContents from "../components/ReviewContents";
 
 function BookReviewPage() {
   return (
     <>
-      <ReviewContents/>
+      <ReviewContents type="작가"/>
     </>
   );
 }
