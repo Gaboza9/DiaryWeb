@@ -109,7 +109,7 @@ const WeeklyPage = () => {
     saveData(newData);
   };
   return (
-    <div className="weekly-container">
+    <div className="weekly-container mx-5 my-5">
       {weekData.map((item, idx) => {
         const id = getId(item);
         const calanderData = data.find((e) => e.id === id);

@@ -1,3 +1,4 @@
+import { color } from "@mui/system";
 import { useRef, useState } from "react";
 import FormCheckInput from "react-bootstrap/esm/FormCheckInput";
 
@@ -25,6 +26,17 @@ const WeeklyCalanderItem = ({
   const onChangeCheck = (todoText, bool) => {
     onChangeChecked(id, todoText, bool);
   };
+  const onChangeLine = (todoText, bool) => {
+    if(bool){
+      return(
+        <div style={{textDecoration: 'line-through', color:'grey'}}>{todoText}</div>
+      )
+    }else{
+      return(
+        <div>{todoText}</div>
+      )
+    }
+  };
   const deleteTodo = (todoText) => {
     onDeleteTodo(id, todoText);
   };
@@ -33,7 +45,7 @@ const WeeklyCalanderItem = ({
       {visiblePopup && (
         <CreatePopup onCreateTodo={createTodo} onClose={togglePopup} />
       )}
-      <div className="weekly-calander-header">
+      <div className="weekly-calander-header text-center">
         {customHeader ?? headerMap[dayIdx]}
       </div>
       <div className="weekly-calander-body">
@@ -45,7 +57,7 @@ const WeeklyCalanderItem = ({
                 onChangeCheck(item.text, !item.checked);
               }}
             />
-            <div>{item.text}</div>
+           {onChangeLine(item.text, item.checked)}
             <button
               onClick={() => {
                 deleteTodo(item.text);
