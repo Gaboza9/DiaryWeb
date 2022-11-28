@@ -14,7 +14,7 @@ const Calendar = () => {
   dateFormat="yyyy년 MM월 dd일"
   showPopperArrow={false}
   customInput={		      // 날짜 뜨는 인풋 커스텀
-    <Form.Control as="textarea" rows={1} style={{width:"250px"}}/>
+    <Form.Control as="textarea" rows={1} style={{width:"250px", fontFamily:'barun'}}/>
   }
     />
   );

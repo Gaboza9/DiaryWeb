@@ -35,7 +35,7 @@ function ReviewContents(props){
                 </section>
 
         <section style={secCenter}>
-          <div className="body_review" class="mt-5 mx-5">
+          <div className="body_review" class="mt-2 mx-5">
         
           {
             <Table bordered>
@@ -77,7 +77,7 @@ function ReviewContents(props){
           </div>
 
           <div class="d-md-flex justify-content-md-end">
-          <button class="btn btn-secondary me-md-5 mb-3" type="button">저장하기</button></div>
+          <button class="btn btn-secondary me-md-5 mb-3" type="button" style={{fontFamily:'barun'}}>저장하기</button></div>
           
 
         </section>

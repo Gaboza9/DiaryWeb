@@ -4,7 +4,7 @@ import '../fonts/font.css'
 function BookReviewPage() {
   return (
     <>
-      <h1 class="text-center mt-4" style={{fontFamily:'barun'}}>책 리뷰 페이지</h1>
+      <h1 class="text-center mt-4" style={{fontFamily:'puradak'}}>책 리뷰 페이지</h1>
       <ReviewContents type="작가"/>
     </>
   );

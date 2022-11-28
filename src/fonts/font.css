@@ -7,3 +7,8 @@
     font-family: 'barun';
     src: url('NanumBarunGothic.ttf');
 }
+
+@font-face {
+    font-family: 'puradak';
+    src: url('Puradak Gentle Gothic.ttf');
+}
