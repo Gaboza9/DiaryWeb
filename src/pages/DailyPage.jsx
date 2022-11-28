@@ -7,6 +7,8 @@ import targetsState from '../components/Daily/kjwStickerAtom';
 import { PictureList } from './../components/Daily/pictureList';
 import KjwDecoration from '../components/Daily/kjwDecoration';
 import dayjs from "dayjs";
+import Button from 'react-bootstrap/Button';
+import styled from 'styled-components';
 
 function DailyPage(){
     const bodyStyle = {
@@ -16,13 +18,17 @@ function DailyPage(){
         fontFamily: "'Gamja Flower', cursive"
     }
     const mainStyle = {
-        backgroundColor:"#ffffdd",
         flexBasis:"100%",
         display: "flex",
         flexDirection: "column",
         paddingTop: "20px",
         paddingBottom: "30px",
     }
+    const TestStyle = styled.div`
+        width:50px;
+        height:50px;
+        background: ${(props) => props?"white":"yellow"};
+    `;
 
     // 날짜
     const [currentDate, setCurrentDate] = useState(dayjs(new Date()))
@@ -40,6 +46,8 @@ function DailyPage(){
     }, currentDate);
 */
     const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [isDeco, setDeco] = useState(false)
     const changeDeco = (isDeco) => {
@@ -85,7 +93,14 @@ function DailyPage(){
 
     return (
         <div style={bodyStyle}>
-            <KjwSidebar setTargets={setTargets} box={box} funcWeather={changeWeather} funcPicture={changePicture} picture={numPicture} funcDeco={changeDeco} isDeco={isDeco} funcImage={changeSetIsImage} isImage={isImage} funcImageSrc={setImageSrc}/>
+            {show && <KjwSidebar 
+                handleClose={handleClose} setTargets={setTargets} box={box} funcWeather={changeWeather} funcPicture={changePicture} picture={numPicture} funcDeco={changeDeco} isDeco={isDeco} funcImage={changeSetIsImage} isImage={isImage} funcImageSrc={setImageSrc}
+                />
+            
+            }
+            {!show && <Button 
+                variant="light" onClick={handleShow}>편집</Button>
+            }
             <div style={{display:"flex", flexBasis:"100%", flexDirection:"row", justifyContent:"center"}}>
                 <div style={mainStyle} ref={stockContainer}>
                     <KjwDecoration targets={targets}/>

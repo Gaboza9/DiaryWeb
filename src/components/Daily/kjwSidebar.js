@@ -15,10 +15,8 @@ function KjwSidebar(props) {
         paddingBottom: "30px"
     }
     
-    /*
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    */
+    
+    
 
     /*
     <Button variant="light" onClick={handleShow} 
@@ -40,7 +38,7 @@ function KjwSidebar(props) {
         <div style={{borderRight:"1px solid grey"}}>
             <div style={sidebarStyle}>
                 
-                <KjwSide funcPicture={props.funcPicture} funcWeather={props.funcWeather} funcDeco={props.funcDeco} funcImage={props.funcImage}/>
+                <KjwSide handleClose={props.handleClose} funcPicture={props.funcPicture} funcWeather={props.funcWeather} funcDeco={props.funcDeco} funcImage={props.funcImage}/>
                 {props.isImage &&
                     <KjwImageBar funcImageSrc={props.funcImageSrc} picture={props.picture}/>
                 }
@@ -48,7 +46,6 @@ function KjwSidebar(props) {
                 {props.isDeco && 
                     <KjwDragDrop setTargets = {props.setTargets} box={props.box}/>
                 }
-                
             </div>
         </div>
     );

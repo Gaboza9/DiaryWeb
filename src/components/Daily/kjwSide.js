@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Toggle from './toggle';
 import AddImage from './../Menu/AddImage';
 import ImageUpload from '../Menu/ImageUpload';
+import Button from 'react-bootstrap/Button';
 
 function KjwSide(props) {
     const wrapStyle= {
@@ -9,7 +10,8 @@ function KjwSide(props) {
         flexDirection: "column",
         width: "300px",
         fontFamily: "'Nanum Gothic', sans-serif",
-        borderRight:"1px solid black"
+        borderRight:"1px solid black",
+        padding:"10px"
     }
     const divStyle = {
         display: "flex",
@@ -102,7 +104,7 @@ function KjwSide(props) {
                 <Toggle listener={props.funcDeco}/>
             </div>
 
-            <button>완료</button>
+            <Button variant="light" onClick={props.handleClose}>완료</Button>
             
         </div>
     );
