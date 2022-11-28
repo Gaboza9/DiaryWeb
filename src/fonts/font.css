@@ -2,3 +2,8 @@
     font-family: 'diarly';
     src: url('EF_Diary.ttf');
 }
+
+@font-face {
+    font-family: 'barun';
+    src: url('NanumBarunGothic.ttf');
+}

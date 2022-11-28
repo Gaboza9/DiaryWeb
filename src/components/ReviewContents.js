@@ -26,12 +26,6 @@ function ReviewContents(props){
     flexDirection:"column"
   }
 
-  const submitButton={
-    width:"100%",
-    height:"100%",
-    flexDirection:"column"
-  }
-
   return(
     <>
     <Container>
@@ -83,7 +77,7 @@ function ReviewContents(props){
           </div>
 
           <div class="d-md-flex justify-content-md-end">
-          <button class="btn btn-secondary me-md-5 mb-3" type="button">작성하기</button></div>
+          <button class="btn btn-secondary me-md-5 mb-3" type="button">저장하기</button></div>
           
 
         </section>
