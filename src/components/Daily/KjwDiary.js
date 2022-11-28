@@ -3,6 +3,7 @@ import KjwPictureArray from './kjwPictureArray';
 import KjwTemp from './kjwTemp';
 import KjwWeatherList from './kjwWeatherList';
 import { styled } from 'styled-components';
+import ControlledCarousel from './controlledCarousel';
 
 function KjwDiary(props) {
     const paperStyle = {
@@ -47,6 +48,7 @@ function KjwDiary(props) {
                     {(props.weather) && <KjwWeatherList/>}
                 </div>
                 <textarea disabled={props.isEdit} style={contentStyle} placeholder='내용을 적어주세요.'/>
+                <ControlledCarousel/>
             </div>
             {(props.picture!=0) &&  <div>
                 <KjwPictureArray num={props.picture}/>

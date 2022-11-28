@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Toggle from './toggle';
+import AddImage from './../Menu/AddImage';
 
 function KjwSide(props) {
     const wrapStyle= {
@@ -51,6 +52,19 @@ function KjwSide(props) {
 
     //<button onClick={setSide}>완료</button>
     // 
+
+    const [diaryImg, setDiaryImg] = useState([]);
+
+    const addImage = e => {
+        const nowSelectImageList = e.target.files;
+        const nowImageURLList = [...diaryImg];
+        for(let i=0; nowSelectImageList.length; i++){
+            const nowImageUrl = URL.createObjectURL(nowSelectImageList)
+            nowImageURLList.push(nowImageUrl)
+        }
+        setDiaryImg(nowImageURLList)
+    }
+
     return (
         <div style={wrapStyle}>
             <div style={divStyle}>
@@ -65,6 +79,22 @@ function KjwSide(props) {
                     <span style={{width:'50px', textAlign:'center'}}>{numPicture}</span>
                     <button style={btnStyle} onClick={() => changeListener("sub")}>-</button>
                 </div>
+            </div>
+
+            <div>
+                <label
+                    htmlFor="input-file"
+                    className="sideInputImage"
+                    onChange={addImage}
+                >사진 올리기
+                    <input
+                        type="file"
+                        multiple="multiple"
+                        id="input-file"
+                        style={{display:'none'}}
+                        accept=".jpg, .jpeg, .png"
+                    />
+                </label>
             </div>
             
             <div style={divStyle}>
