@@ -3,8 +3,8 @@ import StarRating from './RePage/StarRating'
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import ImageUpload from './Menu/ImageUpload';
-import KjwLeft from './kjwLeft';
-import KjwRight from './kjwRight';
+import KjwRight from './Daily/kjwRight';
+import KjwLeft from './Daily/kjwLeft';
 
 function ReviewContents(props){
 
