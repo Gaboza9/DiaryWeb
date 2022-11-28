@@ -3,13 +3,16 @@ import StarRating from './StarRating'
 import Container from 'react-bootstrap/Container';
 
 import Table from 'react-bootstrap/Table';
+import ImageUpload from '../Menu/ImageUpload';
+
+import './ReviewContents.css'
 
 function ReviewContents(){
 
     return(
       <>
     <Container>
-        <div className="body_review" class="mt-5">
+        <div className="body_review" class="mt-5 mx-5">
             <Table bordered>
 
             <thead>
@@ -33,11 +36,14 @@ function ReviewContents(){
 
             <Table bordered>
                 <tbody>
-                  <tr>
-                    <td> </td>
-                    <td colspan = {2}><textarea type="text" style={{border: 0}}
+                  <tr height="400px">
+                    <td width="40%">
+                      <ImageUpload />
+                    </td>
+                    <td colspan = {2}><textarea   rows="22" class="form-control" height="500px" type="text" style={{border: 0}}
                     placeholder="한줄평을 입력하세요"></textarea></td>
                   </tr>
+                 
                 </tbody>
             </Table>
         </div>

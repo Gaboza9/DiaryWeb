@@ -8,7 +8,6 @@ function ImageUpload() {
   // 파일 저장
   const saveFileImage = (e) => {
     setFileImage(URL.createObjectURL(e.target.files[0]));
-    localStorage.setItem("fileImage", URL.createObjectURL(e.target.files[0]));
   };
 
   // 파일 삭제
@@ -19,19 +18,15 @@ function ImageUpload() {
 
   return (
     <>
-      {/* <h1>이미지 미리보기</h1> */}
-      <table>
-        <tbody>
-          <tr>
-            {/* <th>이미지</th> */}
-            <td>
               <div>
                 {fileImage && (
-                  <img
+                  <img 
+
                     alt="sample"
                     src={fileImage}
-                    style={{ margin: "auto"}}
-                    width='90'
+                    height='100%'
+                    width='80%'
+                    class="mx-5 my-3"
                   />
                 )}
                 <div
@@ -47,11 +42,7 @@ function ImageUpload() {
                     onChange={saveFileImage}
                   />
                 </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                </div>
     </>
   );
 }

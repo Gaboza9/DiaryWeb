@@ -37,3 +37,7 @@
     width: 100%;
     border: 1px solid #C8C8C8;
   }
+
+#inputImg img{
+  width: 100px;
+}
