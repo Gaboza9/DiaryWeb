@@ -42,7 +42,7 @@ function ReviewContents(props){
               <thead>
                 <tr>
                   <th class="text-center align-middle">제목</th>
-                  <td width="60%" ><textarea   rows="1" class="form-control" height="500px" type="text" style={{border: 0}}
+                  <td width="60%" ><textarea rows="1" class="form-control" height="500px" type="text" style={{border: 0}}
                   placeholder="제목을 입력하세요"></textarea></td>
                   <th class="text-center align-middle">날짜</th>
                   <td width="20%" class="align-top"><Calendar /></td>
