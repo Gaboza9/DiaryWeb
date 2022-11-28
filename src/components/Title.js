@@ -14,7 +14,8 @@ function title() {
             <Nav.Link href="/monthly">Monthly</Nav.Link>
             <Nav.Link href="/weekly">Weekly</Nav.Link>
             <Nav.Link href="/daily">Daily</Nav.Link>
-            <Nav.Link href="/review">Review</Nav.Link>
+            <Nav.Link href="/bookReview">BookReview</Nav.Link>
+            <Nav.Link href="/movieReview">MovieReview</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
