@@ -38,7 +38,7 @@ function ControlledCarousel(props) {
         </Carousel.Item>
     */
     return (
-        <Carousel onSelect={handleSelect} style={{backgroundColor:"#c8c8c8"}}>
+        <Carousel onSelect={handleSelect} style={{backgroundColor:"#ffffff00", border:"1px solid #C8C8C8"}}>
         <Carousel.Item style={{ display:"flex",flexDirection:"row",justifyContent:"center"}}>
             <img
                 className="d-block w-50"

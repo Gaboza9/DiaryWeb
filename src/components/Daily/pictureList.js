@@ -1,4 +1,9 @@
-export const PictureList = [ { id:0, url:"오둥이1"},
-{ id:1, url:"오둥이2"},
-{ id:2, url:"오둥이3"},
-{ id:3, url:"오둥이4"}]
+export const PictureList = [ { id:0, url:"sticker1"},
+{ id:0, url:"sticker2"},
+{ id:0, url:"sticker3"},
+{ id:0, url:"sticker4"},
+{ id:0, url:"sticker5"},
+{ id:0, url:"sticker6"},
+{ id:0, url:"sticker7"},
+{ id:0, url:"sticker8"},
+]

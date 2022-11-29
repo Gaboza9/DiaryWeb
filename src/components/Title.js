@@ -10,7 +10,7 @@ function title() {
   return (
     <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="/home">Diary#</Navbar.Brand>
+          <Navbar.Brand href="/monthly">Diary</Navbar.Brand>
           <Nav className="mb-3">
             <Nav.Link href="/monthly">Monthly</Nav.Link>
             <Nav.Link href="/weekly">Weekly</Nav.Link>

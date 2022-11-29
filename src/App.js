@@ -16,6 +16,7 @@ function App() {
       <Title />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Monthly/>} />  
           <Route path="/daily" element={<RecoilRoot><Daily /></RecoilRoot>} />
           <Route path="/monthly" element={<Monthly/>}/>
           <Route path="/weekly" element={<WeeklyPage />} />
